@@ -1,5 +1,5 @@
 import { parser } from "https://deno.land/x/postcss_selector_parser@v6.0.2/mod.js";
-import { name } from "../src/package.json";
+const name = "postcss-combine-duplicated-selectors";
 
 /**
  * Ensure that attributes with different quotes match.
@@ -66,7 +66,7 @@ const defaultOptions = {
   removeDuplicatedProperties: false,
 };
 
-export default (options) => {
+export default function combineDuplicatedSelectors(options) {
   options = Object.assign({}, defaultOptions, options);
   return {
     postcssPlugin: name,
@@ -136,6 +136,6 @@ export default (options) => {
       };
     },
   };
-};
+}
 
-export const postcss = true;
+combineDuplicatedSelectorspostcss = true;
