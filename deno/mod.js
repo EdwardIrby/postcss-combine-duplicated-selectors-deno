@@ -1,4 +1,4 @@
-import { parser } from "https://deno.land/x/postcss_selector_parser@v6.0.2/mod.js";
+import parser from "https://deno.land/x/postcss_selector_parser@v6.0.2/mod.js";
 const name = "postcss-combine-duplicated-selectors";
 
 /**
