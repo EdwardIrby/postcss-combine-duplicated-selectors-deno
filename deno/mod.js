@@ -138,4 +138,4 @@ export default function combineDuplicatedSelectors(options) {
   };
 }
 
-combineDuplicatedSelectorspostcss = true;
+combineDuplicatedSelectors.postcss = true;

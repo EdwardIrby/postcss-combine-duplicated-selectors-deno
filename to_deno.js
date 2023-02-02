@@ -31,7 +31,7 @@ await convert({
         code = code.replaceAll('"./deps.js"', '"https://deno.land/x/postcss_selector_parser@v6.0.2/mod.js"');
         code = code.replaceAll('import { name } from "../src/package.json"', 'const name = "postcss-combine-duplicated-selectors"');
         code = code.replaceAll('(options) =>', 'function combineDuplicatedSelectors(options)');
-        code = code.replaceAll('export const ', 'combineDuplicatedSelectors');
+        code = code.replaceAll('export const ', 'combineDuplicatedSelectors.');
         return code
     }
     );
