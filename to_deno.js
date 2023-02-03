@@ -7,7 +7,7 @@ await convert({
   output: "deno",
   transpile: false,
   modules: {
-    "": "mod.js",
+    "": "plugin.js",
   },
   copy: {
     // "source_map.ts": "lib/source_map.ts",
@@ -20,7 +20,7 @@ await convert({
     // Rename lib/purgecss.esm.js => mod.js
     rename(
       "src/index.js",
-      "mod.js",
+      "plugin.js",
       (code) => code.replaceAll(`./`, `./src/`),
     );
   },
