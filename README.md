@@ -16,7 +16,7 @@ import combineDuplicatedSelectors from "https://deno.land/x/postcss_combine_dupl
 
 const { css } = await postcss([
   combineDuplicatedSelectors,
-]).process(YOUR_CSS, { from: undefined, to: "" });
+]).process(YOUR_CSS, { from: "src/app.css", to: "app.css" });
 ```
 
 ### Node
