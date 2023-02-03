@@ -1,12 +1,5 @@
 # Postcss combine duplicated selectors
 
-<!-- current project status -->
-
-[![npm](https://img.shields.io/npm/v/postcss-combine-duplicated-selectors.svg)](https://www.npmjs.com/package/postcss-combine-duplicated-selectors)
-[![build status](https://github.com/ChristianMurphy/postcss-combine-duplicated-selectors/workflows/CI/badge.svg)](https://github.com/ChristianMurphy/postcss-combine-duplicated-selectors/actions)
-[![dependency status](https://david-dm.org/ChristianMurphy/postcss-combine-duplicated-selectors.svg)](https://david-dm.org/ChristianMurphy/postcss-combine-duplicated-selectors)
-[![devDependency status](https://david-dm.org/ChristianMurphy/postcss-combine-duplicated-selectors/dev-status.svg)](https://david-dm.org/ChristianMurphy/postcss-combine-duplicated-selectors?type=dev)
-
 Automatically detects and combines duplicated css selectors so you don't have to
 :smile:
 
