@@ -1,26 +1,21 @@
 import { convert } from "https://deno.land/x/nodedeno@v0.2.8/mod.js";
 
-// Convert the code
 await convert({
   src: "postcss-combine-duplicated-selectors",
   input: ["src"],
-  output: "deno",
+  output: "./",
   transpile: false,
   modules: {
-    "": "plugin.js",
+    "": "mod.js",
   },
   copy: {
-    // "source_map.ts": "lib/source_map.ts",
-    // "deps.js": "lib/deps.js",
-    // "test": "test",
     "postcss-combine-duplicated-selectors/README.md": "README.md",
     "postcss-combine-duplicated-selectors/LICENSE": "LICENSE",
   },
   beforeConvert(_src, { replaceAll, rename }) {
-    // Rename lib/purgecss.esm.js => mod.js
     rename(
       "src/index.js",
-      "plugin.js",
+      "mod.js",
       (code) => code.replaceAll(`./`, `./src/`),
     );
   },

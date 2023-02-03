@@ -1,5 +1,7 @@
 # Clean old files
-rm -rf deno
+rm README.md
+rm LICENSE
+rm mod.js
 rm -rf postcss-combine-duplicated-selectors
 
 # Clone the repo
@@ -13,5 +15,5 @@ deno run --unstable --allow-read=. --allow-write=. to_deno.js
 # Autoformat the code
 deno fmt deno
 
-# Run the tests
-# deno test --unstable --allow-read=. --allow-env=DENO_ENV deno/test
+# Cleanup
+rm -rf postcss-combine-duplicated-selectors
