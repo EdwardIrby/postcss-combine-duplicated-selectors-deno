@@ -9,7 +9,7 @@ await convert({
     "": "mod.js",
   },
   copy: {
-    "postcss-combine-duplicated-selectors/README.md": "README.md",
+  //   "postcss-combine-duplicated-selectors/README.md": "README.md",
     "postcss-combine-duplicated-selectors/LICENSE": "LICENSE",
   },
   beforeConvert(_src, { replaceAll, rename }) {

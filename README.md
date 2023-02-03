@@ -12,9 +12,26 @@ Automatically detects and combines duplicated css selectors so you don't have to
 
 ## Usage
 
-### Requirements
+### Deno
 
-In order to use this you will need to have [postcss](https://github.com/postcss/postcss) installed. Depending on whether or not you want to use the CLI you need to install [postcss-cli](https://github.com/postcss/postcss-cli).
+Import the module:
+
+```ts
+import postcss from "https://deno.land/x/postcss@8.4.16/mod.js";
+// @deno-types="https://deno.land/x/postcss_combine_duplicated_selectors/deno/mod.d.ts"
+import combineDuplicatedSelectors from "https://deno.land/x/postcss_combine_duplicated_selectors/deno/mod.js";
+
+const { css } = await postcss([
+  combineDuplicatedSelectors,
+]).process(YOUR_CSS, { from: undefined, to: "" });
+```
+
+### Node
+
+In order to use this you will need to have
+[postcss](https://github.com/postcss/postcss) installed. Depending on whether or
+not you want to use the CLI you need to install
+[postcss-cli](https://github.com/postcss/postcss-cli).
 
 ```bash
 npm install --save-dev postcss postcss-combine-duplicated-selectors
@@ -25,18 +42,18 @@ yarn add --dev postcss postcss-combine-duplicated-selectors
 ### Using PostCSS JS API
 
 ```js
-'use strict';
+"use strict";
 
-const fs = require('fs');
-const postcss = require('postcss');
-const css = fs.readFileSync('src/app.css');
+const fs = require("fs");
+const postcss = require("postcss");
+const css = fs.readFileSync("src/app.css");
 
-postcss([require('postcss-combine-duplicated-selectors')])
-    .process(css, {from: 'src/app.css', to: 'app.css'})
-    .then((result) => {
-      fs.writeFileSync('app.css', result.css);
-      if (result.map) fs.writeFileSync('app.css.map', result.map);
-    });
+postcss([require("postcss-combine-duplicated-selectors")])
+  .process(css, { from: "src/app.css", to: "app.css" })
+  .then((result) => {
+    fs.writeFileSync("app.css", result.css);
+    if (result.map) fs.writeFileSync("app.css.map", result.map);
+  });
 ```
 
 ### Using PostCSS CLI
@@ -84,10 +101,10 @@ Duplicated properties can optionally be combined.
 Set the `removeDuplicatedProperties` option to `true` to enable.
 
 ```js
-const postcss = require('postcss');
-const combineSelectors = require('postcss-combine-duplicated-selectors');
+const postcss = require("postcss");
+const combineSelectors = require("postcss-combine-duplicated-selectors");
 
-postcss([combineSelectors({removeDuplicatedProperties: true})]);
+postcss([combineSelectors({ removeDuplicatedProperties: true })]);
 ```
 
 When enabled the following css
@@ -109,13 +126,16 @@ will combine into
 }
 ```
 
-In order to limit this to only combining properties when the values are equal, set the `removeDuplicatedValues` option to `true` instead. This could clean up duplicated properties, but allow for conscious duplicates such as fallbacks for custom properties.
+In order to limit this to only combining properties when the values are equal,
+set the `removeDuplicatedValues` option to `true` instead. This could clean up
+duplicated properties, but allow for conscious duplicates such as fallbacks for
+custom properties.
 
 ```js
-const postcss = require('postcss');
-const combineSelectors = require('postcss-combine-duplicated-selectors');
+const postcss = require("postcss");
+const combineSelectors = require("postcss-combine-duplicated-selectors");
 
-postcss([combineSelectors({removeDuplicatedValues: true})]);
+postcss([combineSelectors({ removeDuplicatedValues: true })]);
 ```
 
 This will transform the following css
@@ -145,4 +165,7 @@ into
 
 ### Media Queries
 
-If you have code with media queries, pass code through [_postcss-combine-media-query_](https://github.com/SassNinja/postcss-combine-media-query) or [_css-mquery-packer_](https://github.com/n19htz/css-mquery-packer) before _postcss-combine-duplicated-selectors_ to ensure optimal results.
+If you have code with media queries, pass code through
+[_postcss-combine-media-query_](https://github.com/SassNinja/postcss-combine-media-query)
+or [_css-mquery-packer_](https://github.com/n19htz/css-mquery-packer) before
+_postcss-combine-duplicated-selectors_ to ensure optimal results.

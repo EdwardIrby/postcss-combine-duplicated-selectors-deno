@@ -1,5 +1,5 @@
 # Clean old files
-rm README.md
+# rm README.md
 rm LICENSE
 rm mod.js
 rm -rf postcss-combine-duplicated-selectors
