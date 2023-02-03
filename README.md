@@ -11,8 +11,8 @@ Import the module:
 
 ```ts
 import postcss from "https://deno.land/x/postcss@8.4.16/mod.js";
-// @deno-types="https://deno.land/x/postcss_combine_duplicated_selectors@10.0.4/mod.d.ts"
-import combineDuplicatedSelectors from 'https://deno.land/x/postcss_combine_duplicated_selectors@10.0.4/mod.js'
+// @deno-types="https://deno.land/x/postcss_combine_duplicated_selectors@10.0.5/mod.d.ts"
+import combineDuplicatedSelectors from "https://deno.land/x/postcss_combine_duplicated_selectors@10.0.5/mod.js";
 
 const { css } = await postcss([
   combineDuplicatedSelectors,
